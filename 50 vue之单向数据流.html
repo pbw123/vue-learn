@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="components-demo">
+		</div>
+	</body>
+	<script>
+		Vue.component('blog-post', {
+			// 在 JavaScript 中是 camelCase 的
+			props: ['initialCounter'],
+data: function () {
+  return {
+    counter: this.initialCounter
+  }
+}
+			template: '<div><h3>{{ title }}</h3><h2>{{likes}}</h2><div v-if="isPublished">0987654321</div><div v-for="commentId in commentIds">{{commentId}}</div><div>{{author}}</div><div>{{id}}</div></div>'
+		})
+		new Vue({
+			el: '#components-demo',
+			data: {
+				post: {
+					title: '这是标题',
+					author: {
+						name: '作者名字'
+					},
+					likes: 42,
+					isPublished: true,
+					commentIds: [1, 2, 3],
+					author: {
+						name: '潘',
+						company: 'alibaba'
+					}
+				},
+				pt: {
+					id: 1,
+					title: 'My Journey with Vue'
+				}
+			}
+		})
+	</script>
+</html>

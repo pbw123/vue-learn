@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="components-demo">
+			<base-input v-model="username" required placeholder="Enter your username"></base-input>
+		</div>
+	</body>
+	<script>
+		Vue.component('base-input', {
+			inheritAttrs: false,
+			props: ['label', 'value'],
+			template: `
+    <label>
+      {{ label }}
+      <input
+        v-bind="$attrs"
+        v-bind:value="value"
+        v-on:input="$emit('input', $event.target.value)"
+      >
+    </label>
+  `
+		})
+		var vm = new Vue({
+			el: '#components-demo',
+			data: {
+				username:''
+			}
+		})
+	</script>
+</html>

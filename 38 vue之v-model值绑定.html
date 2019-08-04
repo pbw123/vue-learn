@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="example">
+			<!-- 	复选框
+			<br>
+			<input type="checkbox" v-model="toggle" true-value="yes" false-value="no">
+			{{toggle}}
+			<br> -->
+			单选按钮
+			<br>
+			<input type="radio" v-model="pick" v-bind:value="a">
+			<br>
+			选择框的选项
+			<select v-model="selected">
+				<!-- 内联对象字面量 -->
+				<option v-bind:value="{ number: 123 }">123</option>
+			</select>
+			{{selected.number}}
+		</div>
+	</body>
+	<script>
+		var vm = new Vue({
+			el: '#example',
+			data: {
+				toggle: '',
+				pick: '',
+				a: 'aaaaa',
+				selected:''
+			}
+		})
+	</script>
+</html>

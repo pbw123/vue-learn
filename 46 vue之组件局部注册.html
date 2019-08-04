@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="components-demo">
+			<component-a></component-a>
+			<component-b></component-b>
+			
+		</div>
+	</body>
+	<script>
+		var ComponentA = {
+			data: function() {
+				return {
+					count: 0
+				}
+			},
+			template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+		}
+		// 注意局部注册的组件在其子组件中不可用。例如，如果你希望 ComponentA 在 ComponentB 中可用，则你需要这样写
+		var ComponentB = {
+			data: function() {
+				return {
+					sum: 100
+				}
+			},
+			components: {
+				'component-b': ComponentA
+			},
+			// ...
+			template: '<button v-on:click="sum--">You clicked me {{ sum }} times.</button>'
+		}
+		new Vue({
+			el: '#components-demo',
+			components: {
+				'component-a': ComponentA,
+				'component-b': ComponentB
+			},
+
+			data: {
+
+			}
+		})
+	</script>
+</html>

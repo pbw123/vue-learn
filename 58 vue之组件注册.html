@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="vm">
+			<my-com></my-com>
+			<my-com2></my-com2>
+			<my-com3></my-com3>
+			<my-com4></my-com4>
+			<login></login>
+		</div>
+		<template id="temp1">
+			<h4>
+				通过template元素在外部定义组件结构，会有代码提示和高亮
+				</4>
+		</template>
+		<template id="temp2">
+			<h5>
+				私有组件注册
+				</h5>
+		</template>
+	</body>
+	<script>
+		var com = Vue.extend({
+			// 通过这个属性指定组件要展示的HTML结构
+			template: '<h3>全局注册组件方式一</h3>'
+		})
+		Vue.component('myCom', com)
+		Vue.component('myCom2', Vue.extend({
+			template: '<h2>全局注册组件方式二</h2>'
+		}))
+		Vue.component('myCom3', {
+			template: '<h1>全局注册组件方式三</h1>'
+		})
+		Vue.component('myCom4', {
+			template: '#temp1'
+		})
+		new Vue({
+			el: '#vm',
+			components: {
+				login: {
+					template: '#temp2'
+				}
+			}
+		})
+	</script>
+</html>

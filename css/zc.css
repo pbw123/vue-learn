@@ -1,0 +1,42 @@
+body {
+    background-color: #007DDB;
+}
+
+.name {
+    height: 20px;
+    width: 200px;
+    border-radius: 5px;
+}
+
+.cancle {
+    width: 3.125rem;
+    height: 1.875rem;
+    border-radius: 0.625rem;
+    border: 2px solid red;
+    background-color: red;
+}
+
+.rigs {
+    width: 3.125rem;
+    height: 1.875rem;
+    border-radius: 0.625rem;
+    border: 2px solid greenyellow;
+    background-color: greenyellow;
+}
+
+.bottom {
+    color: #00FF00;
+}
+
+.main {
+    margin: 100px 500px;
+}
+
+.title {
+    color: red;
+    font-size: 1.875rem;
+    margin-bottom: 30px;
+    line-height: 20px;
+    display: block;
+
+}

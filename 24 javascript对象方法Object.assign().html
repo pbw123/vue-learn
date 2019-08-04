@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+		var target = {
+			a: 1
+		};
+		var source1 = {
+			b: 2
+		};
+		var source2 = {
+			c: 3
+		};
+		// Object.assign方法的第一个参数是目标对象，后面的参数都是源对象。
+		// Object.assign(target, source1, source2);
+		// 如果该参数不是对象，则会先转成对象，然后返回。
+		typeof Object.assign(2) // "object"
+		// console.log(typeof Object.assign(2));
+		// 如果只有一个参数，Object.assign会直接返回该参数。
+		var obj = {
+			a: 1
+		};
+		Object.assign(obj) === obj // true
+		
+		var v1 = 'abc';
+		var v2 = true;
+		var v3 = 10;
+	//	var oj = Object.assign({}, v1, v2, v3);
+		// console.log(oj); // { "0": "a", "1": "b", "2": "c" }
+	</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="example-1">
+			<button v-on:click="counter += 1">Add 1</button>
+			<p> {{ counter }} </p>
+		</div>
+
+	</body>
+	<script>
+		var example1 = new Vue({
+			el: '#example-1',
+			data: {
+				counter: 0
+			}
+		})
+	</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="example">
+			<label>文本</label>
+			<br>
+			<input v-model="message" placeholder="edit me">
+			<p>Message is: {{ message }}</p>
+			
+			<label>多行文本</label>
+			<br>
+			<span>Multiline message is:</span>
+			<p style="white-space: pre-line;">{{ msg }}</p>
+			<br>
+			<textarea v-model="msg" placeholder="add multiple lines"></textarea>
+
+		</div>
+	</body>
+	<script>
+		var vm=new Vue({
+			el: '#example',
+			data:{
+				message:'',
+				msg:''
+			}
+		})
+	</script>
+</html>

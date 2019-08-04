@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	</head>
+	<body>
+		<div id="app">
+			<a v-bind:[attributename]="url">动态参数绑定属性</a>
+			<a v-on:[eventname]="doSomething"> 动态事件 </a>
+
+		</div>
+	</body>
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+				url: 'http://www.panbingwen.cn/',
+				attributename: "href",
+				eventname: "mouseleave",
+				doSomething: function() {
+					alert("使用动态参数为一个动态的事件名绑定处理函数");
+				}
+
+			}
+
+		})
+	</script>
+	<style>
+
+	</style>
+</html>

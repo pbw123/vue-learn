@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	</head>
+	<body>
+		<div id="app">
+			<div v-bind:count='t1+t2'></div>
+			<div v-bind:sum='t3+t4'></div>
+			<p>{{t1+1}}</p>
+		</div>
+	</body>
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+				t1:1,
+				t2:2,
+				t3:'3',
+				t4:'4'
+			}
+		})
+	</script>
+</html>

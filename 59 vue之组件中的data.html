@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="vm">
+			<my-com3></my-com3>
+		</div>
+	</body>
+	<script>
+		Vue.component('myCom3', {
+			template: '<h1>{{msg}}</h1>',
+			data:function(){
+				return {
+					msg:'组件中的data必须为一个方法且返回一个对象，当中的数据使用方式完全和实例中的data的使用方式一样'
+				}
+			}
+		})
+		new Vue({
+			el: '#vm'
+		})
+	</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<style>
+	#red-color{
+		color: red;
+	}
+</style>
+	</head>
+	<body>
+		<div id="app">
+			<p v-bind:haha="myName">v-bind的学习</p>
+			<input v-bind:value="value"></input>
+			<p :id='color'>绑定id</p>
+			
+		</div>
+	</body>
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+				value:'绑定value',
+				myName:'马云',
+				color:'red-color'
+			}
+		})
+	</script>
+</html>

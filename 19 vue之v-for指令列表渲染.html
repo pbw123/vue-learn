@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	</head>
+	<body>
+		<!-- 用 v-for 把一个数组对应为一组元素 -->
+		<ul id="example-1">
+			<li v-for="item in items">
+				{{ item.message }}
+			</li>
+		</ul>
+		<!-- 在 v-for 块中，我们可以访问所有父作用域的属性。v-for 还支持一个可选的第二个参数，即当前项的索引。 -->
+		<ul id="example-2">
+			<li v-for="(item, index) in items">
+				{{ parentMessage }} - {{ index }} - {{ item.message }}
+			</li>
+		</ul>
+		<!-- 你也可以用 v-for 来遍历一个对象的属性。-->
+		<ul id="v-for-object" class="demo">
+			<li v-for="value in object">
+				{{ value }}
+			</li>
+			<!-- 你也可以提供第二个的参数为 property 名称 (也就是键名)-->
+			<div v-for="(value, name) in object">
+				{{ name }}: {{ value }}
+			</div>
+			<!-- 还可以用第三个参数作为索引 -->
+			<div v-for="(value, name, index) in object">
+				{{ index }}. {{ name }}: {{ value }}
+			</div>
+		</ul>
+
+
+	</body>
+	<script>
+		var example1 = new Vue({
+			el: '#example-1',
+			data: {
+				items: [{
+						message: 'Foo'
+					},
+					{
+						message: 'Bar'
+					}
+				]
+			}
+		})
+		var example2 = new Vue({
+			el: '#example-2',
+			data: {
+				parentMessage: 'Parent',
+				items: [{
+						message: 'Foo'
+					},
+					{
+						message: 'Bar'
+					}
+				]
+			}
+		})
+		new Vue({
+			el: '#v-for-object',
+			data: {
+				object: {
+					title: 'How to do lists in Vue',
+					author: 'Jane Doe',
+					publishedAt: '2016-04-10'
+				}
+			}
+		})
+	</script>
+	<style>
+
+	</style>
+</html>

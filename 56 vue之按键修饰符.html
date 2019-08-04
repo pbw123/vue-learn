@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="components-demo">
+			<input type="text" v-model="message" @keyup.enter="add" />
+			{{message}}
+		</div>
+	</body>
+	<script>
+		var vm = new Vue({
+			el: '#components-demo',
+			data: {
+				message: ''
+			},
+			methods:{
+				add:function(){
+					 alert(this.message+'按键修饰符');
+				}
+			}
+		})
+	</script>
+</html>

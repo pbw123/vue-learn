@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Vue.js-访问API接口数据-蓝墨云班课练习</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 通过CDN引入Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- 通过CDN引入axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <style type="text/css">
+        body {
+            background-color: #eee;
+        }
+
+        .top {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        hr {
+            width: 80%;
+            color: #efefef;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            padding-left: 20px;
+            padding-top: 10px;
+        }
+
+        .card {
+            width: 250px;
+            /* flex: 1 1 20%; */
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #eee;
+            margin-right: 20px;
+            margin-bottom: 10px;
+            background-color: #fff;
+            justify-content: center;
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-top: 5px;
+        }
+
+        .card img {
+            width: 100%;
+        }
+
+        p {
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        .teacher {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .left {
+            display: flex;
+        }
+
+        .avatar img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .code {
+            color: #00BBDD;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div class="top">
+        <p>进行中的班课</p>
+        <p>{{courses.length}}个进行中的班课</p>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="card" v-for="(course, index) in courses" :key="index">
+            <div class="cover">
+                <img :src="'img/'+course.cover">
+            </div>
+            <div class="course-class">
+                <p>{{course.courseClass}}</p>
+            </div>
+            <div class="course-name">
+                <p>{{course.courseName}}</p>
+            </div>
+            <div class="teacher">
+                <div class="left">
+                    <div class="avatar">
+                        <img :src="'img/'+course.avatar">
+                    </div>
+                    <div class="username">
+                        <p class="code">{{course.username}}</p>
+                    </div>
+                </div>
+                <div class="course-code">
+                    <p class="code" v-if="loginUserId === course.userId">{{course.courseCode}}</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript">
+    var app = new Vue({
+        el: '#app',
+        data: {
+            loginUserId: 1,
+            courses: []
+        },
+        created: function () {
+            var _this = this;
+            axios.get('http://localhost:8080/api/courses')
+                .then(function (response) {
+                    console.log(response.data);
+                    _this.courses = response.data;
+                })
+        }
+    })
+</script>
+</body>
+</html>

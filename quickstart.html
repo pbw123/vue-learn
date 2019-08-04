@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Vue.js起步</title>
+    <!-- 通过cdn引入vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+<!-- vue-app根容器 -->
+<div id="app">
+    <h2>{{message}}</h2>
+    <h3>{{name}}</h3>
+    <h2>{{age}}</h2>
+</div>
+<script type="text/javascript">
+    //实例化一个vue对象
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Vue.js',
+            name: '尤雨溪',
+            age: 88
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	</head>
+	<body>
+		<ul id="app">
+			<li v-for="item in userProfile">
+				{{ item }}
+			</li>
+		</ul>
+	</body>
+	<script>
+		var vm = new Vue({
+			el: '#app',
+			data: {
+				userProfile: {
+					name: 'Anika'
+				}
+			}
+		})
+		// 你可以添加一个新的 age 属性到嵌套的 userProfile 对象
+		Vue.set(vm.userProfile, 'age', 27)
+		var target = {
+			a: 1
+		};
+		var source1 = {
+			b: 2
+		};
+		var source2 = {
+			c: 3
+		};
+	var target=	Object.assign(target, source1, source2);
+		// target // {a:1, b:2, c:3}
+	</script>
+	<style>
+
+	</style>
+</html>

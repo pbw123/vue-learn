@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>v-bind绑定练习</title>
+    <!-- 通过cdn引入vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+<!-- vue-app根容器 -->
+<div id="app">
+    <p>姓名：{{name}}</p>
+    <input type="text" v-bind:value="discription" name="" id="" value=""/>
+    <a v-bind:href="url">{{website}}</a>
+    <img :src="avatar">
+</div>
+<script type="text/javascript">
+    //实例化一个vue对象
+    var app = new Vue({
+        el: '#app',
+        data: {
+            name: '尤雨溪',
+            discription: 'Vue.js的创立者33',
+            website: 'Vue.js官网',
+            url: 'http://baidu.com',
+            avatar: 'https://cn.vuejs.org/images/logo.png'
+        }
+    })
+</script>
+</body>
+</html>

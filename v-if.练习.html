@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>v-if练习</title>
+    <!-- 通过cdn引入vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/v-if.css"/>
+    <link rel="stylesheet" type="text/css" href="Font-Awesome/css/font-awesome.min.css"/>
+</head>
+<body>
+<div class="containar">
+    <div class="cart">
+        <div class="top">
+            <div class="tj">推荐作者</div>
+            <div>换一批</div>
+        </div>
+
+        <div class="main">
+            <div class="main-two" v-for="item in items">
+                <div class="left">
+                    <img :src="item.avatar">
+                </div>
+                <div class="center">
+                    <div class="name">{{item.name}}</div>
+                    <div class="description">{{item.description}}</div>
+                </div>
+
+                <div class="right">
+                    <div class="att act" v-if="item.attention">关注</div>
+                    <div class="att" v-else="">已关注</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <div class="">查看全部</div>
+        </div>
+    </div>
+</div>
+<!-- vue-app根容器 -->
+<script type="text/javascript">
+    var m = new Vue({
+        el: '.main',
+        data: {
+            items: [{
+                avatar: 'img/tx.jpg',
+                name: '潘炳稳',
+                description: '写了325k字，11k喜欢',
+                attention: true
+            }, {
+                avatar: 'img/tx.jpg',
+                name: '潘炳稳',
+                description: '写了325k字，11k喜欢',
+                attention: false
+            },
+                {
+                    avatar: 'img/tx.jpg',
+                    name: '潘炳稳',
+                    description: '写了325k字，11k喜欢',
+                    attention: true,
+
+
+                },
+                {
+                    avatar: 'img/tx.jpg',
+                    name: '潘炳稳',
+                    description: '写了325k字，11k喜欢',
+                    attention: true
+                },
+                {
+                    avatar: 'img/tx.jpg',
+                    name: '潘炳稳',
+                    description: '写了325k字，11k喜欢',
+                    attention: false
+                }
+
+            ]
+        }
+
+    })
+</script>
+</body>
+</html>
