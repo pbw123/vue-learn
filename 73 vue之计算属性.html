@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" name="" id="" value="" v-model="firstname"/>
+			<input type="text" name="" id="" value="" v-model="lastname"/>
+			<input type="text" name="" id="" value="" v-model="fullname"/>
+		</div>
+	</body>
+	<script>
+		var vm = new Vue({
+			el: '#app',
+			data:{
+				firstname:'',
+				lastname:''
+			},
+			// 任何data发生变化都会重新计算这个计算属性的值
+			computed:{
+				fullname(){
+					return this.firstname+'-'+this.lastname
+				}
+			}
+		})
+	</script>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="https://unpkg.com/vue-router@2.0.0/dist/vue-router.js"></script>
+	</head>
+	<style type="text/css">
+		.header{
+			background-color: #0000FF;
+			height: 100px;
+		}
+		.left{
+			flex: 2;
+			background-color:red;
+		}
+		.main{
+			background-color: green;
+			flex: 8;
+		}
+		.containar{
+			display: flex;
+			height: 600px;
+		}
+		h1{
+			margin: 0;
+			padding: 0;
+		}
+		html,body{
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+	<body>
+		<div id="app">
+			<router-view></router-view>
+		<div class="containar">
+				<router-view name="left"></router-view>
+			<router-view name="main"></router-view>
+		</div>
+		</div>
+	</body>
+	<script>
+		var header = {
+			template: '<h1 class="header">header组件</h1>'
+		}
+		var left = {
+			template: '<h1 class="left">left组件</h1>'
+		}
+		var main = {
+			template: '<h1 class="main">main组件</h1>'
+		}
+		var router = new VueRouter({
+			routes: [{
+					path: '/',
+					components: {
+						'default':header,
+						'left':left,
+						'main':main
+					}
+				}
+
+			]
+		})
+		var vm = new Vue({
+			el: '#app',
+			router: router
+		})
+	</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" name="" id="" value="" v-model="firstname" @keyup="getFullname"/>
+			<input type="text" name="" id="" value="" v-model="lastname" @keyup="getFullname"/>
+			<input type="text" name="" id="" value="" v-model="fullname"/>
+		</div>
+	</body>
+	<script>
+		var vm = new Vue({
+			el: '#app',
+			data:{
+				firstname:'',
+				lastname:'',
+				fullname:''
+			},
+			methods:{
+				getFullname(){
+					this.fullname=this.firstname+'---'+this.lastname
+				}
+			}
+		})
+	</script>
+</html>

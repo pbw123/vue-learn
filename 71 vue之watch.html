@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" name="" id="" value="" v-model="firstname"/>
+			<input type="text" name="" id="" value="" v-model="lastname"/>
+			<input type="text" name="" id="" value="" v-model="fullname"/>
+		</div>
+	</body>
+	<script>
+		var vm = new Vue({
+			el: '#app',
+			data:{
+				firstname:'',
+				lastname:'',
+				fullname:''
+			},
+			watch:{
+				firstname:function(oldVal,newVal){
+					// this.fullname=this.firstname+this.lastname
+					console.log(oldVal+'======='+newVal)
+					this.fullname=newVal+this.lastname
+				},
+				lastname:function(newVal){
+					// this.fullname=this.firstname+this.lastname
+					this.fullname=this.firstname+newVal
+
+				}
+			}
+		})
+	</script>
+</html>
