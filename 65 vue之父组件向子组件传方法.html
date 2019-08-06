@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<link rel="stylesheet" href="https://unpkg.com/animate.css@3.5.2/animate.min.css">
+	</head>
+	<body>
+		<div id="app">
+			<com1 @func="show"></com1>
+		</div>
+		<template id="tmp1">
+			<div>
+				<h1>这是子组件</h1>
+				<input type="button" value="点击调用父组件的方法" @click="myclick">
+			</div>
+		</template>
+	</body>
+	<script>
+	var	com1={
+			template:'#tmp1',
+			methods:{
+				myclick(){
+					this.$emit('func',this.sonmsg)
+				}
+			},
+			data(){
+				return {
+					sonmsg:{name:'张三',age:'20'}
+				}
+			}
+		}
+		new Vue({
+			el:'#app',
+			data:{
+				dataFormson:null
+			},
+			methods:{
+				show:function(data){
+					this.dataFormson=data;
+					console.log("父组件方法"+this.dataFormson);
+				}
+			},
+			components:{
+				com1
+			}
+		})
+	</script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<link rel="stylesheet" href="https://unpkg.com/animate.css@3.5.2/animate.min.css">
+	</head>
+	<body>
+		<div id="app">
+			<com1 :sonmsg="msg"></com1>
+		</div>
+	</body>
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				msg:'这是父组件的数据'
+			},
+			components:{
+				com1:{
+					template:'<h1>子组件中的模板-----{{sonmsg}}</h1>',
+					props:['sonmsg']
+				}
+			}
+		})
+	</script>
+</html>

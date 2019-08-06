@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="https://unpkg.com/vue-router@2.0.0/dist/vue-router.js"></script>
+	</head>
+	<style type="text/css">
+		/* 默认高亮样式 */
+		/* .router-link-active{
+			color: red;
+			font-size: 80px;
+			font-weight: 800;
+			font-style: initial;
+			text-decoration: underline;
+			background-color: green;
+		} */
+		/* 或者自定义 */
+		.myactive{
+			color: #0000FF;
+			font-size: 50px;
+		}
+	</style>
+	<body>
+		<div id="app">
+			<a href="#/login">登录</a>
+			<a href="#/register">注册</a>
+			<!-- 也可以这么写 -->
+			<router-link to="/login">登录2</router-link>
+			<router-link to="/register">注册2</router-link>
+		<router-view></router-view>
+		</div>
+	</body>
+	<script>
+		var login={
+			template:'<h1>登录组件</h1>'
+		}
+		var register={
+			template:'<h1>注册组件</h1>'
+		}
+		var routerobj=new VueRouter({
+			routes:[
+				{path:'/login',component:login},
+				{path:'/register',component:register},
+				// 重定向
+				{path:'/',redirect:'/login'}
+				
+			],
+			linkActiveClass:'myactive'
+		})
+		var vm=new Vue({
+			el:'#app',
+			router:routerobj
+		})
+	</script>
+</html>

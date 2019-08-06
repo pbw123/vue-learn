@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<link rel="stylesheet" href="https://unpkg.com/animate.css@3.5.2/animate.min.css">
+		<style>
+			.box{height: 100px;width: 100px;background-color: lightblue}
+</style>
+	</head>
+	<body>
+		<div class="box animated  rotateIn"></div>
+		<div id="app">
+			<button v-on:click="flag = !flag">
+				Toggle2
+			</button>
+			<transition 
+			enter-active-class="bounceIn" 
+			leave-active-class="bounceOut"
+			:duration="{enter:200,leave:800}">
+				<p v-if="flag" class="animated">animate</p>
+			</transition>
+		</div>
+	</body>
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				flag: true
+			}
+		})
+	</script>
+</html>

@@ -10,7 +10,10 @@
 			
 			<a href="" @click.prevent="comName='login'">登录</a>
 			<a href="" @click.prevent="comName='register'">注册</a>
-			<component :is="comName"></component>
+			<transition mode="out-in">
+				<component :is="comName"></component>
+
+			</transition>
 		</div>
 	</body>
 	<script>
@@ -28,4 +31,14 @@
 			}
 		})
 	</script>
+	<style type="text/css">
+		.v-enter,.v-leave-to{
+			opacity: 0;
+			transform: translateX(150px);
+		}
+		.v-enter-active,.v-leave-active{
+			transition: all 0.5s ease; 
+		}
+		
+	</style>
 </html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="demo">
+			<button v-on:click="show = !show">
+				Toggle
+			</button>
+			<transition>
+				<p v-if="show">hello</p>
+			</transition>
+				<button v-on:click="flag = !flag">
+				Toggle2
+			</button>
+			<transition name="fade">
+				<p v-if="flag">过渡的类名</p>
+			</transition>
+		</div>
+	</body>
+	<script>
+		new Vue({
+			el: '#demo',
+			data: {
+				show: true,
+				flag:true
+			}
+		})
+	</script>
+	<style>
+		.v-enter-active,
+		.v-leave-active {
+			transition: opacity .5s;
+		}
+
+		.v-enter,
+		.v-leave-to {
+			opacity: 0;
+		}
+		
+		.fade-enter-active, .fade-leave-active {
+  transition: all 0.4s ease;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateX(100px);
+}
+	</style>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="https://unpkg.com/vue-router@2.0.0/dist/vue-router.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<router-link to="/login?id=10&name=query应用">登录</router-link>
+			<router-link to="/register/12/params应用">注册</router-link>
+		<router-view></router-view>
+		</div>
+	</body>
+	<script>
+		var login={
+			template:'<h1>登录组件----{{$route.query.id}}----{{$route.query.name}}</h1>',
+			// 生命周期勾子函数
+			created(){
+				console.log(this.$route.query.id);
+				console.log(this.$route.query.name)
+			}
+		}
+		var register={
+			template:'<h1>注册组件---{{$route.params.id}}---{{$route.params.name}}</h1>',
+			created(){
+				console.log(this.$route.params.id);
+				console.log(this.$route.params.name)
+			}
+		}
+		var router=new VueRouter({
+			routes:[
+				{path:'/login',component:login},
+				{path:'/register/:id/:name',component:register}
+				
+			]
+		})
+		var vm=new Vue({
+			el:'#app',
+			router:router
+		})
+	</script>
+</html>
