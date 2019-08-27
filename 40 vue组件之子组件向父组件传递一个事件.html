@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>子组件向父组件通讯</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<cpn @sunclick="myclick"></cpn>
+		</div>
+		
+		<template id="tem">
+			<div>
+				<button @click="cpnclick(12345)">点击子组件</button>
+			</div>
+		</template>
+	</body>
+	<script>
+		const cpn = {
+						props:['sunmsg'],
+						template: '#tem',
+						methods:{
+							cpnclick(val){
+								this.$emit('sunclick',val)
+							}
+						}
+				}
+		new Vue({
+			el: '#app',
+			components: {
+				cpn
+			},
+			methods:{
+				myclick(val){
+					console.log(val)
+				}
+			}
+			
+		})
+	</script>
+</html>

@@ -13,15 +13,16 @@
 			<my-com4></my-com4>
 			<login></login>
 		</div>
+		
 		<template id="temp1">
 			<h4>
 				通过template元素在外部定义组件结构，会有代码提示和高亮
-				</4>
+			</4>
 		</template>
 		<template id="temp2">
 			<h5>
 				私有组件注册
-				</h5>
+			</h5>
 		</template>
 	</body>
 	<script>
@@ -42,6 +43,7 @@
 		new Vue({
 			el: '#vm',
 			components: {
+				// 这里的组件只有在该vm实例中有效
 				login: {
 					template: '#temp2'
 				}
