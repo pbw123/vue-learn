@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<login></login>
+			<login><span slot='right'>替换右边</span></login>
+			<login><button slot='left'>替换左边</button></login>
+			<login><h4 slot='center'>替换中间</h4></login>
+		</div>
+		<template id='tem'>
+			<div>
+				<h1>你好呀</h1>
+				<!-- <slot><button type="button">默认</button></slot> -->
+				<slot name='left'><span>左边</span></slot>
+				<slot name='center'><span>中间</span></slot>
+				<slot name='right'><span>右边</span></slot>
+			</div>
+		</template>
+	</body>
+	<script>
+		var login = {
+			template: '#tem'
+		}
+		var vm = new Vue({
+			el: '#app',
+			data: {
+				msg: 123
+			},
+			components: {
+				login
+			}
+		})
+	</script>
+</html>

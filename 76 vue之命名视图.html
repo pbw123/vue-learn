@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="https://unpkg.com/vue-router@2.0.0/dist/vue-router.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<router-view class="view one"></router-view>
+			<router-view class="view two" name="a"></router-view>
+			<router-view class="view three" name="b"></router-view>
+		</div>
+	</body>
+	<script>
+		var Foo = {
+			template: '<h1>这是Foo组件</h1>'
+		} 
+		var Bar = {
+			template: '<h1>这是Bar组件</h1>'
+		}
+		var Baz = {
+			template: '<h1>这是Baz组件</h1>'
+		}
+		const router = new VueRouter({
+		  routes: [
+		    {
+		      path: '/',
+		      components: {
+		        default: Foo,
+		        a: Bar,
+		        b: Baz
+		      }
+		    }
+		  ]
+		})
+		
+		var vm = new Vue({
+			el: '#app',
+			data: {
+				msg: 123
+			},
+			components: {
+				Foo,
+				Bar,
+				Baz
+			},
+			router
+		})
+	</script>
+</html>

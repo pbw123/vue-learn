@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<div>5678</div>
+			<login></login>
+		</div>
+	</body>
+	<script>
+		var login={
+			template:'<h1>登录组件</h1>'
+		}
+		var vm=new Vue({
+			el:'#app',
+			data:{
+				msg:123
+			},
+			render:function(createElements){
+				return createElements(login)
+			}
+		})
+	</script>
+</html>
