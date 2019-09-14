@@ -8,18 +8,13 @@
 	</head>
 	<body>
 		<div id="app">
-			{{ message }}
+			钩子函数
 		</div>
 	</body>
 	<script>
 		var app = new Vue({
-			el: '#app',
-			data: {
-				message: 'Hello Vue!从入门到放弃'
-			},
-			 // created 钩子可以用来在一个实例被创建之后执行代码：
 			created:function(){
-				console.log("created 钩子可以用来在一个实例被创建之后执行代码")
+				console.log("实例被创建之后就会执行created 钩子函数里的代码")
 			}
 		})
 	</script>
