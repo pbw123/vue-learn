@@ -4,25 +4,22 @@
 		<meta charset="utf-8">
 		<title></title>
 		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
 	</head>
 	<body>
 		<div id="app">
-			<!-- 我们可以传给 v-bind:class 一个对象，以动态地切换 class -->
-			<div v-bind:class="{red:isRed,fontSize:isBig}">绑定一个对象</div>
-			<!-- v-bind:class 指令也可以与普通的 class 属性共存 -->
+			<div v-bind:class="{red:isRed,fontSize:isBig}">绑定一个对象，以动态地切换 class </div>
+			
 			<div class="back" v-bind:class="{red:isRed,fontSize:isBig}">可以与普通的 class 属性共存</div>
-			<!-- 绑定的数据对象不必内联定义在模板里 -->
-			<div v-bind:class="classObject">绑定的数据对象不必内联定义在模板里</div>
-			<!-- 我们也可以在这里绑定一个返回对象的计算属性。这是一个常用且强大的模式 -->
-			<div v-bind:class="obj">绑定一个返回对象的计算属性</div>
-			<!-- 我们可以把一个数组传给 v-bind:class，以应用一个 class 列表 -->
-			<div v-bind:class="[activeClass, errorClass]">绑定class数组</div>
-			<!-- 如果你也想根据条件切换列表中的 class，可以用三元表达式 -->
-			<div v-bind:class="[isActive ? activeClass : '', errorClass]">用三元表达式根据条件切换列表中的class</div>
-			<!-- 在数组语法中也可以使用对象语法 -->
-			<div v-bind:class="[{ active: isActive }, errorClass]">在数组语法中使用对象语法</div>
+			
+			<div v-bind:class="classObject">绑定的数据对象不必内联定义在模板里，可封闭成一个对象</div>
 
+			<div v-bind:class="obj">绑定一个返回对象的计算属性</div>
+			
+			<div v-bind:class="[activeClass, errorClass]">绑定class数组，以应用一个 class 列表 </div>
+			
+			<div v-bind:class="[isActive ? activeClass : '', errorClass]">用三元表达式根据条件切换列表中的class</div>
+			
+			<div v-bind:class="[{ active: isActive }, errorClass]">在数组语法中使用对象语法</div>
 		</div>
 	</body>
 	<script>
@@ -56,7 +53,7 @@
 		}
 
 		.fontSize {
-			font-size: 50px;
+			font-size: 20px;
 		}
 
 		.back {
@@ -68,7 +65,7 @@
 		}
 
 		.text-danger {
-			font-size: 50px;
+			font-size: 20px;
 		}
 	</style>
 </html>
