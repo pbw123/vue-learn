@@ -4,24 +4,23 @@
 		<meta charset="utf-8">
 		<title></title>
 		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
 	</head>
 	<body>
 		<div id="app">
-			<h1 v-if="awesome">Vue is awesome!</h1>
-			<h1 v-else>Oh no 😢</h1>
-
+			<div v-if="msg > 1">
+			  Now you see me
+			</div>
+			<div v-else>
+			  Now you don't
+			</div>
 		</div>
 	</body>
 	<script>
 		var app = new Vue({
 			el: '#app',
 			data: {
-               awesome:true
+               msg:1
 			}
 		})
 	</script>
-	<style>
-
-	</style>
 </html>

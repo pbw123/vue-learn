@@ -8,12 +8,6 @@
 	<body>
 		<div id="app">
 			<li v-for="todo in todos" v-if="todo!==2">{{ todo }}</li>
-			<ul v-if="todos.length<4">
-				<li v-for="todo in todos">
-					{{ todo }}
-				</li>
-			</ul>
-			<p v-else>No todos left!</p>
 		</div>
 
 	</body>

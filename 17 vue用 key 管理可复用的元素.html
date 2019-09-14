@@ -4,17 +4,16 @@
 		<meta charset="utf-8">
 		<title></title>
 		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
 	</head>
 	<body>
 		<div id="app">
 			<template v-if="loginType === 'username'">
 				<label>Username</label>
-				<input placeholder="Enter your username" key="username-input">
+				<input placeholder="Enter your username" key="input">
 			</template>
 			<template v-else>
 				<label>Email</label>
-				<input placeholder="Enter your email address" key="email-input">
+				<input placeholder="Enter your email address" key="input">
 			</template>
 			<button v-on:click="toggleLoginType()">Toggle login type</button>
 		</div>
@@ -34,7 +33,4 @@
 
 		})
 	</script>
-	<style>
-
-	</style>
 </html>

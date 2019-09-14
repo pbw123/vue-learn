@@ -4,36 +4,38 @@
 		<meta charset="utf-8">
 		<title></title>
 		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
 	</head>
 	<body>
 		<!-- 用 v-for 把一个数组对应为一组元素 -->
 		<ul id="example-1">
-			<li v-for="item in items">
+			<li v-for="item in items" :key="item.id">
 				{{ item.message }}
 			</li>
 		</ul>
+		<hr >
 		<!-- 在 v-for 块中，我们可以访问所有父作用域的属性。v-for 还支持一个可选的第二个参数，即当前项的索引。 -->
 		<ul id="example-2">
 			<li v-for="(item, index) in items">
 				{{ parentMessage }} - {{ index }} - {{ item.message }}
 			</li>
 		</ul>
-		<!-- 你也可以用 v-for 来遍历一个对象的属性。-->
-		<ul id="v-for-object" class="demo">
+		<hr >
+		<!-- 你也可以用 v-for 来遍历一个对象的属性。 -->
+		<ul id="v-for-object">
 			<li v-for="value in object">
 				{{ value }}
 			</li>
-			<!-- 你也可以提供第二个的参数为 property 名称 (也就是键名)-->
+			<hr >
+			<!-- 你也可以提供第二个的参数为 property 名称 (也就是键名) -->
 			<div v-for="(value, name) in object">
 				{{ name }}: {{ value }}
 			</div>
+			<hr >
 			<!-- 还可以用第三个参数作为索引 -->
 			<div v-for="(value, name, index) in object">
 				{{ index }}. {{ name }}: {{ value }}
 			</div>
 		</ul>
-
 
 	</body>
 	<script>
@@ -73,7 +75,4 @@
 			}
 		})
 	</script>
-	<style>
-
-	</style>
 </html>

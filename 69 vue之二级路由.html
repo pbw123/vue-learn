@@ -13,7 +13,7 @@
 		</div>
 		<template id="temp">
 			<div>
-				<h1>这是account的组件模板</h1>
+				<h4>这是account的组件模板</h4>
 				<router-link to="/login">登录</router-link>
 				<router-link to="/register">注册</router-link>
 				<router-view></router-view>
@@ -22,10 +22,10 @@
 	</body>
 	<script>
 		var login = {
-			template: '<h1>登录组件</h1>'
+			template: '<h5>登录组件</h5>'
 		}
 		var register = {
-			template: '<h1>注册组件</h1>'
+			template: '<h5>注册组件</h5>'
 		}
 		var account = {
 			template: '#temp',

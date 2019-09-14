@@ -15,7 +15,7 @@
 	</body>
 	<script>
 		var login={
-			template:'<h1>登录组件----{{$route.query.id}}----{{$route.query.name}}</h1>',
+			template:'<h3>登录组件----{{$route.query.id}}----{{$route.query.name}}</h3>',
 			// 生命周期勾子函数
 			created(){
 				console.log(this.$route.query.id);
@@ -23,7 +23,7 @@
 			}
 		}
 		var register={
-			template:'<h1>注册组件---{{$route.params.id}}---{{$route.params.name}}</h1>',
+			template:'<h3>注册组件---{{$route.params.id}}---{{$route.params.name}}</h3>',
 			created(){
 				console.log(this.$route.params.id);
 				console.log(this.$route.params.name)
