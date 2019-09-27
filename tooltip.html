@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<!-- 引入样式 -->
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<!-- 引入组件库 -->
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<el-tooltip placement="top" effect="light">
+				<div slot="content">
+					<img src="vue-router-project/src/assets/logo.png">
+				</div>
+				<el-button>Top center</el-button>
+			</el-tooltip>
+
+			<div v-for="(item,index) in 5">
+
+				<div v-if="item===3">
+					<el-tooltip content="Top center" placement="top" effect="light">
+						  <div slot="content">
+							  <img src="vue-router-project/src/assets/logo.png" >
+						  </div>
+
+					  <el-button>{{item}}</el-button>
+					</el-tooltip>
+				</div>
+				
+				<div v-else>
+					<el-button>{{item}}</el-button>
+				</div>
+
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		new Vue({
+			el: '#app',
+			data: {
+				msg: 'java',
+				icon: [{}]
+			}
+		})
+	</script>
+</html>
