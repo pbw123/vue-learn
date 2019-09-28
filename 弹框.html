@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<!-- 引入样式 -->
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<!-- 引入组件库 -->
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+		
+	</head>
+	<body>
+<div id="app">
+	<el-button type="text" @click="open">点击打开 Message Box</el-button>
+	
+	<el-popover
+	  placement="right"
+	  width="400"
+	  trigger="click">
+	  <img src="vue-router-project/public/favicon.ico" >
+	  <button-counter></button-counter>
+	  <el-button slot="reference">click 激活</el-button>
+	</el-popover>
+</div>
+	</body>
+	<script>
+		   
+		  new Vue({
+		  	el: '#app',
+		  	data() {
+		  	      return {
+					  msg:67,
+		  	        gridData: [{
+		  	          date: '2016-05-02',
+		  	          name: '王小虎',
+		  	          address: '上海市普陀区金沙江路 1518 弄'
+		  	        }, {
+		  	          date: '2016-05-04',
+		  	          name: '王小虎',
+		  	          address: '上海市普陀区金沙江路 1518 弄'
+		  	        }, {
+		  	          date: '2016-05-01',
+		  	          name: '王小虎',
+		  	          address: '上海市普陀区金沙江路 1518 弄'
+		  	        }, {
+		  	          date: '2016-05-03',
+		  	          name: '王小虎',
+		  	          address: '上海市普陀区金沙江路 1518 弄'
+		  	        }]
+		  	      };
+		  	    },
+				components: {
+					// 注册一个名为button-counter的局部组件
+					'button-counter': {
+							data: function() {
+								return {
+									count:'局部组件'
+								}
+							},
+							template: '<div style="width: 400px;height: 400px;background-color: red;"><img src="vue-router-project/public/favicon.ico" ></div>'
+					}
+				},
+			methods: {
+			  // open() {
+			  //   const h = this.$createElement;
+			  //   this.$msgbox({
+			  //     title: '消息',
+			  //     message: h('p', null, [
+			  //       h('span', null, '内容可以是 '),
+			  //       h('i', { style: 'color: teal' }, 'VNode'),
+					// h('img', { style: 'background: url(vue-router-project/src/assets/logo.png)'}, 'java')
+			  //     ]),
+			  //     showCancelButton: true,
+			  //     confirmButtonText: '确定',
+			  //     cancelButtonText: '取消',
+			  //     beforeClose: (action, instance, done) => {
+			  //       if (action === 'confirm') {
+			  //         instance.confirmButtonLoading = true;
+			  //         instance.confirmButtonText = '执行中...';
+			  //         setTimeout(() => {
+			  //           done();
+			  //           setTimeout(() => {
+			  //             instance.confirmButtonLoading = false;
+			  //           }, 300);
+			  //         }, 3000);
+			  //       } else {
+			  //         done();
+			  //       }
+			  //     }
+			  //   }).then(action => {
+			  //     this.$message({
+			  //       type: 'info',
+			  //       message: 'action: ' + action
+			  //     });
+			  //   });
+			  // }
+			     // open() {
+			     //      this.$alert('5678', 'HTML 片段', {
+			     //        dangerouslyUseHTMLString: true
+			     //      });
+			     //    }
+			}
+		  })
+	</script>
+	
+</html>
