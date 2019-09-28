@@ -10,6 +10,7 @@ const User = ()=>import('../components/User.vue')
 const News = ()=>import('../components/children/HomeNews.vue')
 const Message = ()=>import('../components/children/HomeMessage.vue')
 const Profile = ()=>import('../components/Profile.vue')
+const Father = ()=>import('../components/Father.vue')
 const  routes = [
 	{
 		path:'',
@@ -29,6 +30,7 @@ const  routes = [
 	},
 	{
 		path:'/about',
+		name:'About',
 		component:About,
 		meta:{
 			title:'关于'
@@ -46,6 +48,13 @@ const  routes = [
 		component:Profile,
 		meta:{
 			title:'档案'
+		}
+	},
+	{
+		path:'/father',
+		component:Father,
+		meta:{
+			title:'父组件'
 		}
 	}
 ]
