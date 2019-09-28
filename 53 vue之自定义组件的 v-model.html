@@ -7,31 +7,31 @@
 	</head>
 	<body>
 		<div id="components-demo">
-<base-checkbox v-model="lovingVue"></base-checkbox>
+			<base-checkbox v-model="lovingVue"></base-checkbox>
 
 		</div>
 	</body>
 	<script>
-Vue.component('base-checkbox', {
-  model: {
-    prop: 'checked',
-    event: 'change'
-  },
-  props: {
-    checked: Boolean
-  },
-  template: `
+		Vue.component('base-checkbox', {
+			model: {
+				prop: 'checked',
+				event: 'change'
+			},
+			props: {
+				checked: Boolean
+			},
+			template: `
     <input
       type="checkbox"
       v-bind:checked="checked"
       v-on:change="$emit('change', $event.target.checked)"
     >
   `
-})
+		})
 		var vm = new Vue({
 			el: '#components-demo',
 			data: {
-				lovingVue:''
+				lovingVue: ''
 			}
 		})
 	</script>

@@ -13,7 +13,7 @@
 			<transition>
 				<p v-if="show">hello</p>
 			</transition>
-				<button v-on:click="flag = !flag">
+			<button v-on:click="flag = !flag">
 				Toggle2
 			</button>
 			<transition name="fade">
@@ -26,7 +26,7 @@
 			el: '#demo',
 			data: {
 				show: true,
-				flag:true
+				flag: true
 			}
 		})
 	</script>
@@ -40,13 +40,19 @@
 		.v-leave-to {
 			opacity: 0;
 		}
-		
-		.fade-enter-active, .fade-leave-active {
-  transition: all 0.4s ease;
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
-  transform: translateX(100px);
-}
+
+		.fade-enter-active,
+		.fade-leave-active {
+			transition: all 0.4s ease;
+		}
+
+		.fade-enter,
+		.fade-leave-to
+
+		/* .fade-leave-active below version 2.1.8 */
+			{
+			opacity: 0;
+			transform: translateX(100px);
+		}
 	</style>
 </html>

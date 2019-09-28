@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<!-- 引入样式 -->
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<!-- 引入组件库 -->
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<el-backtop target=".page-component__scroll .el-scrollbar__wrap" :bottom="100">
+			    <div>
+			      UP
+			    </div>
+			  </el-backtop>
+		</div>
+	</body>
+	<script>
+		new Vue({
+			el:'#app'
+			
+		})
+	</script>
+</html>

@@ -9,7 +9,7 @@
 		<div id="hook-arguments-example">
 			<input v-focus v-color="'red'">
 			<div id="hook-arguments-example" v-demo:foo.a.b="message"></div>
-<div v-fontweight="'900'">私有指令</div>
+			<div v-fontweight="'900'">私有指令</div>
 		</div>
 	</body>
 	<script>
@@ -29,34 +29,33 @@
 				el.style.color = binding.value
 			}
 		})
-		
-		Vue.directive('demo', {
-  bind: function (el, binding, vnode) {
-    var s = JSON.stringify
-    el.innerHTML =
-      'name: '       + s(binding.name) + '<br>' +
-      'value: '      + s(binding.value) + '<br>' +
-      'expression: ' + s(binding.expression) + '<br>' +
-      'argument: '   + s(binding.arg) + '<br>' +
-      'modifiers: '  + s(binding.modifiers) + '<br>' +
-      'vnode keys: ' + Object.keys(vnode).join(', ')
-  }
-})
 
-new Vue({
-  el: '#hook-arguments-example',
-  data: {
-    message: 'hello!'
-  },
-  // 自定义私有属性
-  directives:{
-	  'fontweight':{
-		  bind:function(el,binding){
-			  el.style.fontWeight=binding.value
-		  }
-	  }
-  }
-})
-		
+		Vue.directive('demo', {
+			bind: function(el, binding, vnode) {
+				var s = JSON.stringify
+				el.innerHTML =
+					'name: ' + s(binding.name) + '<br>' +
+					'value: ' + s(binding.value) + '<br>' +
+					'expression: ' + s(binding.expression) + '<br>' +
+					'argument: ' + s(binding.arg) + '<br>' +
+					'modifiers: ' + s(binding.modifiers) + '<br>' +
+					'vnode keys: ' + Object.keys(vnode).join(', ')
+			}
+		})
+
+		new Vue({
+			el: '#hook-arguments-example',
+			data: {
+				message: 'hello!'
+			},
+			// 自定义私有属性
+			directives: {
+				'fontweight': {
+					bind: function(el, binding) {
+						el.style.fontWeight = binding.value
+					}
+				}
+			}
+		})
 	</script>
 </html>
