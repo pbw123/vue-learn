@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<div>
+			<span>请选择你喜欢的颜色:</span>
+			<button type="button" onclick="btn1()">支付宝</button>
+			<button type="button" onclick="btn2()">微信</button>
+		</div>
+		<div id="div1"></div>
+	</body>
+	<script type="text/javascript">
+		window.onload = function() {
+			console.log("ty");
+		}
+
+		function btn1() {
+			div1.innerHTML = '<img src="imgs/gzh.jpg" style="width:350px" />';
+		}
+
+		function btn2() {
+			div1.innerHTML = '<img src="imgs/jie.jpg" style="width:350px"/>';
+		}
+		
+	</script>
+</html>
