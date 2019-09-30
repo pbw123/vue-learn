@@ -1,0 +1,35 @@
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="items.text" ref="count"/>
+        <div  v-html="number"></div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                number: '5',
+                items: {
+                    text:'',
+                },
+            },
+            watch:{   //watch()监听某个值（双向绑定）的变化，从而达到change事件监听的效果
+                items:{
+                    handler:function(){
+                        var _this = this;
+						console.log( _this.$refs.count.getAttribute)
+                        var _sum = 100; //字体限制为100个
+                        _this.$refs.count.setAttribute("maxlength",_sum);
+                        _this.number= _sum- _this.$refs.count.value.length;
+                    },
+                    deep:true
+                }
+            }
+        })
+    </script>
+</body>
+</html>
